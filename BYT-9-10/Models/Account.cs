@@ -18,7 +18,7 @@ namespace BYT_9_10.Models
         [StringLength(12, MinimumLength = 9)] //With or without country code
         public string phoneNumber { get; set; }
         [Required]
-        [StringLength(50, MinimumLength =4)]
+        [EmailAddress]
         public string personalEmail { get; set; }
         [Required]
         [MinLength(10)]
