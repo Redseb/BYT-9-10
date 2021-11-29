@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace BYT_9_10.Models
 {
     internal class Student : Account
     {
-        private int studentNumber { get; set; }
+        [Required]
+        [StringLength(6, MinimumLength =6)]
+        private string studentNumber { get; set; }
         private List<Class> classes;
         private List<Event> events;
 
