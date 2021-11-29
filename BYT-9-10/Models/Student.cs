@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models
 {
-    internal class Student
+    internal class Student : Account
     {
         private int studentNumber { get; set; }
         private string password { get; set; }
-        private List<Class> classes { set; }
-        private List<Event> events { set; }
+        private List<Class> classes;
+        private List<Event> events;
 
         public Student(int studentNumber, string password) {
             this.studentNumber = studentNumber;
             this.password = password;
         }
-
-        public void login(int studentNumber, string password) { //Returns true if login successfull.
+        public override bool login()
+        {
+            //Check this.studentNumber and this.password
             return true;
         }
 
@@ -30,8 +31,10 @@ namespace BYT_9_10.Models
             return events;
         }
 
-        public static getAllStudentsFailingSubjects() { //Returns list of all students failing subjects.
+        public static List<Student> getAllStudentsFailingSubjects() { //Returns list of all students failing subjects.
             return new List<Student>{};
         }
+
+
     }
 }
