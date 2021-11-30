@@ -31,11 +31,12 @@ namespace BYT_9_10.Models {
         public abstract bool login();
 
         public void logout() {
+            //Logs the user out of the system.
             return;
         }
         
         public bool changePassword(string newPassword) {
-            if (newPassword.Length > 10) { //for example...
+            if (newPassword.Length > 10) { //According to exemplary password requirements.
                 return true;
             }
             return false;
