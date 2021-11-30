@@ -26,6 +26,8 @@ namespace BYT_9_10.Models
         public List<Class> clases { get; set; }
         [Required]
         public List<Student> students { get; set; }
+        [Required]
+        public Teacher supervisedBy { get; set; }
 
         public Double getPassRate() { //Returns passrate as a percentage
             return 0.5;

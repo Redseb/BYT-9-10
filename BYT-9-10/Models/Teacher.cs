@@ -16,7 +16,7 @@ namespace BYT_9_10.Models {
         public List<Application> repliedApplications { get; set; }
         [Required]
         public List<Class> classesTaught { get; set; }
-
+        public List<Subject> subjectsSupervised { get; set; }
         public override bool login()
         {
             //check this.emailprefix and this.password
