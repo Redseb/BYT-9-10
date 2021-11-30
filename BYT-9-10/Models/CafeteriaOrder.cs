@@ -25,7 +25,6 @@ namespace BYT_9_10.Models {
         public DateTime orderDateTime { get; set; }
         [Required]
         public OrderStatus status { get; set; }
-        [Required]
         public List<CafeteriaProduct> products { get; set; }
 
         public void cancelOrder() {

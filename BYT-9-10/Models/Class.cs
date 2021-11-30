@@ -21,6 +21,8 @@ namespace BYT_9_10.Models {
 
         private List<Student> students;
         public Teacher teacher { get; set; }
+        [Required]
+        public Subject subject { get; set; }
 
 
         public List<Student> getListOfStudents() {
