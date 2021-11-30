@@ -14,7 +14,8 @@ namespace BYT_9_10.Models {
         
         private List<Class> classes;
         public List<Application> repliedApplications { get; set; }
-
+        [Required]
+        public List<Class> classesTaught { get; set; }
 
         public override bool login()
         {

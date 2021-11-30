@@ -20,6 +20,7 @@ namespace BYT_9_10.Models {
         public string group { get; set; }
 
         private List<Student> students;
+        public Teacher teacher { get; set; }
 
 
         public List<Student> getListOfStudents() {
