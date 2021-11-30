@@ -13,6 +13,7 @@ namespace BYT_9_10.Models {
         public string emailPrefix { get; set; }
         
         private List<Class> classes;
+        public List<Application> repliedApplications { get; set; }
 
 
         public override bool login()

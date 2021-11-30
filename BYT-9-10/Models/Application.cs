@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,12 @@ namespace BYT_9_10.Models {
         [Required]
         [StringLength(300)]
         public string replyMessage { get; set; }
-
+        [Required]
         public bool isCancelled { get; set; }
+        [Required]
+        public Account sender { get; set; }
+        [Required]
+        public Teacher replier { get; set; } //Required but can be empty
 
 
         public void cancelApplication() {
