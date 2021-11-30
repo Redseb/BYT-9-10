@@ -26,6 +26,8 @@ namespace BYT_9_10.Models {
         [Required]
         [MinLength(10)]
         public string password { get; }
+        [Required]
+        public List<CafeteriaOrder> cafeteriaOrders { get; set; }
 
 
         public abstract bool login();

@@ -25,6 +25,10 @@ namespace BYT_9_10.Models {
         public DateTime orderDateTime { get; set; }
         [Required]
         public OrderStatus status { get; set; }
+        [Required]
+        Account buyer { get; set; }
+        [Required]
+        CafeteriaProduct product { get; set; };
 
         public void cancelOrder() {
             this.status = OrderStatus.Cancelled;
