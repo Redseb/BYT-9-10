@@ -5,18 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models
-{
-    internal class Student : Account
-    {
+namespace BYT_9_10.Models {
+    internal class Student : Account {
+        
         [Required]
-        [StringLength(6, MinimumLength =6)]
+        [StringLength(6, MinimumLength = 6)]
         private string studentNumber { get; set; }
+
         private List<Class> classes;
+
         private List<Event> events;
 
-        public override bool login()
-        {
+
+        public override bool login(){
             //Check this.studentNumber and this.password
             return true;
         }
@@ -29,10 +30,9 @@ namespace BYT_9_10.Models
             return events;
         }
 
-        public static List<Student> getAllStudentsFailingSubjects() { //Returns list of all students failing subjects.
+        public static List<Student> getAllStudentsFailingSubjects() { 
+            //Returns list of all students failing subjects.
             return new List<Student>{};
         }
-
-
     }
 }
