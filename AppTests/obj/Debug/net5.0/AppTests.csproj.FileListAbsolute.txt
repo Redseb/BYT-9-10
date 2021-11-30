@@ -1,5 +1,0 @@
-E:\BYT\tutorials\BYT-9-10\AppTests\obj\Debug\net5.0\AppTests.csproj.AssemblyReference.cache
-E:\BYT\tutorials\BYT-9-10\AppTests\obj\Debug\net5.0\AppTests.GeneratedMSBuildEditorConfig.editorconfig
-E:\BYT\tutorials\BYT-9-10\AppTests\obj\Debug\net5.0\AppTests.AssemblyInfoInputs.cache
-E:\BYT\tutorials\BYT-9-10\AppTests\obj\Debug\net5.0\AppTests.AssemblyInfo.cs
-E:\BYT\tutorials\BYT-9-10\AppTests\obj\Debug\net5.0\AppTests.csproj.CoreCompileInputs.cache
