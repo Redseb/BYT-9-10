@@ -32,7 +32,7 @@ namespace BYT_9_10.Models {
 
         public static List<Student> getAllStudentsFailingSubjects() { 
             //Returns list of all students failing subjects.
-            return new List<Student>{};
+            return new List<Student> {};
         }
     }
 }
