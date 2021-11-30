@@ -16,7 +16,8 @@ namespace BYT_9_10.Models {
 
         private List<Event> events;
         public List<Message> messages { get; set; }
-
+        [Required]
+        public List<Subject> subjects { get; set; }
 
 
         public override bool login(){
