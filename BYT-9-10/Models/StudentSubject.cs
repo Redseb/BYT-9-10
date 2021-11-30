@@ -27,5 +27,9 @@ namespace BYT_9_10.Models {
         public Grade grade { get; set; }
 
         public DateTime dateUpdated { get; set; }
+
+        public void setGrade(Grade newGrade) {
+            this.grade = newGrade;
+        }
     }
 }

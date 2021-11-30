@@ -37,5 +37,13 @@ namespace BYT_9_10.Models {
             //Returns list of all Applications with sendDate later than minSendDate.
             return new List<Application> {};
         }
+
+        public void updateApplicationBody(string newBody) { 
+            this.applicationBody = newBody;
+        }
+
+        public void updateReplyMessage(string newReply) { 
+            this.replyMessage = newReply;
+        }
     }
 }
