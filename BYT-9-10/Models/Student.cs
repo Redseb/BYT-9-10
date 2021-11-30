@@ -11,13 +11,10 @@ namespace BYT_9_10.Models {
         [Required]
         [StringLength(6, MinimumLength = 6)]
         private string studentNumber { get; set; }
-        [Required]
 
         private List<Class> classes;
-        [Required]
 
         private List<Event> events;
-        [Required]
         public List<Message> messages { get; set; }
 
 
