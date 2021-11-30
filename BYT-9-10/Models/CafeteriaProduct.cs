@@ -5,18 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    internal class CafeteriaProduct {
+namespace BYT_9_10.Models 
+{
+    internal class CafeteriaProduct 
+    {
         [Required]
-        public int productID { get; set; }
+        public int ProductID { get; set; }
         [Required]
         [Range(0.01, double.MaxValue)]
-        public Double price { get; set; }
+        public Double Price { get; set; }
         [Required]
-        public DateTime bestBeforeDate { get; set; }
+        public DateTime BestBeforeDate { get; set; }
 
-        public void changePrice(double newPrice) {
-            this.price = newPrice;
+        public void ChangePrice(double newPrice) 
+        {
+            this.Price = newPrice;
         }
 
     }

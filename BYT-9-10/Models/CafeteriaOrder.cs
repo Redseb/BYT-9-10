@@ -5,34 +5,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    public enum PaymentMethod { 
+namespace BYT_9_10.Models 
+{
+    public enum PaymentMethod 
+    { 
         OnPickup,
         Online
     }
-    public enum OrderStatus { 
+    public enum OrderStatus 
+    { 
         Accepted,
         BeingPrepared,
         ReadyForPickup,
         Cancelled
     }
-    internal class CafeteriaOrder {
+    internal class CafeteriaOrder 
+    {
         [Required]
-        public int orderId { get; set; }
+        public int OrderId { get; set; }
         [Required]
-        public PaymentMethod paymentMethod { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
         [Required]
-        public DateTime orderDateTime { get; set; }
+        public DateTime OrderDateTime { get; set; }
         [Required]
-        public OrderStatus status { get; set; }
-        public List<CafeteriaProduct> products { get; set; }
+        public OrderStatus Status { get; set; }
+        public List<CafeteriaProduct> Products { get; set; }
 
-        public void cancelOrder() {
-            this.status = OrderStatus.Cancelled;
+        public void CancelOrder() 
+        {
+            this.Status = OrderStatus.Cancelled;
             return;
         }
 
-        public void sendNotification() {
+        public void SendNotification() 
+        {
             //Sends this.status
             return;
         }

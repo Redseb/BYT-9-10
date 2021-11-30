@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models
 {
-    public enum PassMode { 
+    public enum PassMode 
+    { 
         Exam,
         Pass,
         ExamPass
@@ -16,20 +17,21 @@ namespace BYT_9_10.Models
     {
         [Required]
         [StringLength(50, MinimumLength =5)]
-        public string subjectName { get; set; }
+        public string SubjectName { get; set; }
         [Required]
         [StringLength(3, MinimumLength = 3)]
-        public string subjectShortening { get; set; }
+        public string SubjectShortening { get; set; }
         [Required]
-        public PassMode passMode { get; set; }
+        public PassMode PassMode { get; set; }
         [Required]
-        public List<Class> clases { get; set; }
+        public List<Class> Clases { get; set; }
         [Required]
-        public List<Student> students { get; set; }
+        public List<Student> Students { get; set; }
         [Required]
-        public Teacher supervisedBy { get; set; }
+        public Teacher SupervisedBy { get; set; }
 
-        public Double getPassRate() { //Returns passrate as a percentage
+        public Double GetPassRate() 
+        { //Returns passrate as a percentage
             return 0.5;
         }
     }

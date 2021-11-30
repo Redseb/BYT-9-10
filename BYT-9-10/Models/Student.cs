@@ -5,35 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    internal class Student : Account {
+namespace BYT_9_10.Models 
+{
+    internal class Student : Account 
+    {
         
         [Required]
         [StringLength(6, MinimumLength = 6)]
-        private string studentNumber { get; set; }
+        private string StudentNumber { get; set; }
 
-        private List<Class> classes;
+        private List<Class> Classes;
 
-        private List<Event> events;
-        public List<Message> messages { get; set; }
+        private List<Event> Events;
+        public List<Message> Messages { get; set; }
         [Required]
-        public List<StudentSubject> subjects { get; set; }
+        public List<StudentSubject> Subjects { get; set; }
 
 
-        public override bool login(){
+        public override bool Login()
+        {
             //Check this.studentNumber and this.password
             return true;
         }
 
-        public List<Class> getListOfClasses() {
-            return classes;
+        public List<Class> GetListOfClasses() 
+        {
+            return Classes;
         }
 
-        public List<Event> getListOfEvents() {
-            return events;
+        public List<Event> GetListOfEvents() 
+        {
+            return Events;
         }
 
-        public static List<Student> getAllStudentsFailingSubjects() { 
+        public static List<Student> GetAllStudentsFailingSubjects() 
+        { 
             //Returns list of all students failing subjects.
             return new List<Student> {};
         }

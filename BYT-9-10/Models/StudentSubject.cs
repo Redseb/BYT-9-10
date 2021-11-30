@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BYT_9_10.Models {
-    internal class StudentSubject {
+    internal class StudentSubject 
+    {
 
-        public struct Grade {
+        public struct GradesAvailable 
+        {
             public const double Insufficient = 2.0;
             public const double Sufficient = 3.0;
             public const double Satisfactory = 3.5;
@@ -18,18 +20,19 @@ namespace BYT_9_10.Models {
         }
 
         [Required]
-        public Student student { get; set; }
+        public Student Student { get; set; }
 
         [Required]
-        public Subject subject { get; set; }
+        public Subject Subject { get; set; }
 
         [Required]
-        public Grade grade { get; set; }
+        public GradesAvailable Grade { get; set; }
 
-        public DateTime dateUpdated { get; set; }
+        public DateTime DateUpdated { get; set; }
 
-        public void setGrade(Grade newGrade) {
-            this.grade = newGrade;
+        public void setGrade(GradesAvailable newGrade) 
+        {
+            this.Grade = newGrade;
         }
     }
 }

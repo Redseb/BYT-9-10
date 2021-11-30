@@ -5,23 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    internal class Message {
+namespace BYT_9_10.Models 
+{
+    internal class Message 
+    {
         [Required]
-        public int messageId { get; set; }
+        public int MessageId { get; set; }
         [Required]
         [StringLength(1000,MinimumLength = 1)]
-        public string body { get; set; }
+        public string Body { get; set; }
         [Required]
-        public DateTime sendDateTime { get; set; }
+        public DateTime SendDateTime { get; set; }
         [Required]
-        public DateTime readDateTime { get; set; }
+        public DateTime ReadDateTime { get; set; }
         [Required]
-        public Student sender { get; set; }
+        public Student Sender { get; set; }
         [Required]
-        public Student receiver { get; set; }
+        public Student Receiver { get; set; }
 
-        public static bool sendMessage(string studentNumberSender, string studentNumberReceiver, string body) {
+        public static bool SendMessage(string studentNumberSender, string studentNumberReceiver, string body) 
+        {
             //Sends a message to studentNumber
             return true;
         }

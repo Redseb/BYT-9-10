@@ -5,31 +5,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    internal class Event {
+namespace BYT_9_10.Models 
+{
+    internal class Event 
+    {
         
         [Required]
-        public int eventId { get; set; }
+        public int EventId { get; set; }
 
         [Required]
-        public string name { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public DateTime startDateTime { get; set; }
+        public DateTime StartDateTime { get; set; }
 
         [Required]
-        public DateTime endDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
 
-        public bool isCancelled { get; set; }
-        public List<Student> attendees { get; set; }
+        public bool IsCancelled { get; set; }
+        public List<Student> Attendees { get; set; }
 
 
-        public void cancelEvent() { 
-            this.isCancelled = true;
+        public void CancelEvent() 
+        { 
+            this.IsCancelled = true;
         }
 
-        public void changeStartTime(DateTime newDateTime) {
-            this.startDateTime = newDateTime;
+        public void ChangeStartTime(DateTime newDateTime) 
+        {
+            this.StartDateTime = newDateTime;
         }
     }
 }

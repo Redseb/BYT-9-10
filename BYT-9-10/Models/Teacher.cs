@@ -5,26 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BYT_9_10.Models {
-    internal class Teacher : Account {
+namespace BYT_9_10.Models 
+{
+    internal class Teacher : Account 
+    {
 
         [Required]
         [StringLength(10, MinimumLength = 3)]
-        public string emailPrefix { get; set; }
+        public string EmailPrefix { get; set; }
         
-        private List<Class> classes;
-        public List<Application> repliedApplications { get; set; }
+        private List<Class> Classes { get; set; }
+        public List<Application> RepliedApplications { get; set; }
         [Required]
-        public List<Class> classesTaught { get; set; }
-        public List<Subject> subjectsSupervised { get; set; }
-        public override bool login()
+        public List<Class> ClassesTaught { get; set; }
+        public List<Subject> SubjectsSupervised { get; set; }
+        public override bool Login()
         {
             //check this.emailprefix and this.password
             return true;
         }
-        public List<Class> getListOfClasses()
+        public List<Class> GetListOfClasses()
         {
-            return classes;
+            return Classes;
         }
     }
 }
