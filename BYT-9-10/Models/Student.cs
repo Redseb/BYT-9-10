@@ -18,6 +18,7 @@ namespace BYT_9_10.Models {
         public List<Message> messages { get; set; }
 
 
+
         public override bool login(){
             //Check this.studentNumber and this.password
             return true;

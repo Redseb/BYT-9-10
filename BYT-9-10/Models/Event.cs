@@ -21,7 +21,8 @@ namespace BYT_9_10.Models {
         public DateTime endDateTime { get; set; }
 
         public bool isCancelled { get; set; }
-        
+        public List<Student> attendees { get; set; }
+
 
         public void cancelEvent() { 
             this.isCancelled = true;
