@@ -75,7 +75,19 @@ namespace BYT_9_10.Models
 
         [Required]
         [MinLength(10)]
-        public string Password { get; set; }
+        public string Password {
+            get {
+                return Password;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length < 10) {
+                    throw new ValidationException();
+                }
+            }
+        }
         public List<CafeteriaOrder> CafeteriaOrders { get; set; }
         public List<Application> SentApplications { get; set; }
 
