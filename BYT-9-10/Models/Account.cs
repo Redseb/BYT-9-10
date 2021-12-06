@@ -30,7 +30,7 @@ namespace BYT_9_10.Models
         [StringLength(50, MinimumLength =2)]
         public string Surname {
             get {
-                return Name;
+                return Surname;
             }
             set {
                 if (string.IsNullOrEmpty(value)) {
@@ -43,7 +43,19 @@ namespace BYT_9_10.Models
         }
 
         [StringLength(12, MinimumLength = 9)] //With or without country code
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber {
+            get {
+                return PhoneNumber;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length < 9 || value.Length > 12 || value.Any(x => !char.IsLetter(x)) ){
+                    throw new ValidationException();
+                }
+            }
+        }
 
         [Required]
         [EmailAddress]
