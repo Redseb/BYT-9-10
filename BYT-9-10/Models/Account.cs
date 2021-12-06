@@ -59,7 +59,19 @@ namespace BYT_9_10.Models
 
         [Required]
         [EmailAddress]
-        public string PersonalEmail { get; set; }
+        public string PersonalEmail {
+            get {
+                return PersonalEmail;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (!value.Contains('@') || !value.Contains('.')) {
+                    throw new ValidationException();
+                }
+            }
+        }
 
         [Required]
         [MinLength(10)]
