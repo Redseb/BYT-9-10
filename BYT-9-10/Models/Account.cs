@@ -12,7 +12,19 @@ namespace BYT_9_10.Models
         
         [Required]
         [StringLength(20, MinimumLength = 2)]
-        public string Name { get; set; }
+        public string Name {
+            get {
+                return Name;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length < 2 || value.Length > 20) {
+                    throw new ValidationException();
+                }
+            }
+        }
 
         [Required]
         [StringLength(50, MinimumLength =2)]
