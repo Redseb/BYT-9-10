@@ -28,7 +28,19 @@ namespace BYT_9_10.Models
 
         [Required]
         [StringLength(50, MinimumLength =2)]
-        public string Surname { get; set; }
+        public string Surname {
+            get {
+                return Name;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length < 2 || value.Length > 50) {
+                    throw new ValidationException();
+                }
+            }
+        }
 
         [StringLength(12, MinimumLength = 9)] //With or without country code
         public string PhoneNumber { get; set; }
