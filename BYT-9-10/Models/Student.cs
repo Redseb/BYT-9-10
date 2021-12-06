@@ -12,15 +12,32 @@ namespace BYT_9_10.Models
         
         [Required]
         [StringLength(6, MinimumLength = 6)]
-        private string StudentNumber { get; set; }
+        private string StudentNumber { 
+            get {
+                return StudentNumber;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length != 6 || value.First() != 's') {
+                    throw new ValidationException();
+                }
+            } }
 
         private List<Class> Classes;
 
         private List<Event> Events;
+
+
+
         public List<Message> Messages { get; set; }
         [Required]
         public List<StudentSubject> Subjects { get; set; }
 
+        public Student(string name, string surname, string phoneNumber, string personalEmail, string password, string studentNumber) : base(name, surname, phoneNumber, personalEmail, password) {
+            this.StudentNumber = studentNumber;
+        }
 
         public override bool Login()
         {

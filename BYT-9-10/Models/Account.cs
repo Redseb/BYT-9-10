@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    abstract class Account 
+    public abstract class Account 
     {
         
         [Required]
@@ -27,9 +27,17 @@ namespace BYT_9_10.Models
 
         [Required]
         [MinLength(10)]
-        public string Password { get; }
+        public string Password { get; set; }
         public List<CafeteriaOrder> CafeteriaOrders { get; set; }
         public List<Application> SentApplications { get; set; }
+
+        public Account(string name, string surname, string phoneNumber, string personalEmail, string password) { 
+            this.Name = Name;
+            this.Surname = Surname;
+            this.PhoneNumber = PhoneNumber;
+            this.PersonalEmail = PersonalEmail;
+            this.Password = Password;
+        }
 
         public abstract bool Login();
 
