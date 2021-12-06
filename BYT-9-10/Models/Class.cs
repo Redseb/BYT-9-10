@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    internal class Class : Event 
+    public class Class : Event 
     {
         
         [Required]

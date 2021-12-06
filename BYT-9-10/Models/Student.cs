@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    internal class Student : Account 
+    public class Student : Account 
     {
         
         [Required]

@@ -13,7 +13,7 @@ namespace BYT_9_10.Models
         Pass,
         ExamPass
     }
-    internal class Subject
+    public class Subject
     {
         [Required]
         [StringLength(50, MinimumLength =5)]

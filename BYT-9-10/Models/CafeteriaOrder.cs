@@ -19,7 +19,7 @@ namespace BYT_9_10.Models
         ReadyForPickup,
         Cancelled
     }
-    internal class CafeteriaOrder 
+    public class CafeteriaOrder 
     {
         [Required]
         public int OrderId { get; set; }

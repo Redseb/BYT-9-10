@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BYT_9_10.Models {
-    internal class StudentSubject 
+    public class StudentSubject 
     {
 
         public struct GradesAvailable 

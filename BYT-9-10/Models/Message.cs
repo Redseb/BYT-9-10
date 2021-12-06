@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    internal class Message 
+    public class Message 
     {
         [Required]
         public int MessageId { get; set; }
