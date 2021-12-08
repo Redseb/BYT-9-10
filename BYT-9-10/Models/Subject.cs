@@ -15,6 +15,9 @@ namespace BYT_9_10.Models
     }
     public class Subject
     {
+        private string _subjectName;
+        private string _subjectShortening;
+        private Teacher _supervisedBy;
         [Required]
         [StringLength(50, MinimumLength =5)]
         public string SubjectName { get; set; }
@@ -29,6 +32,13 @@ namespace BYT_9_10.Models
         public List<Student> Students { get; set; }
         [Required]
         public Teacher SupervisedBy { get; set; }
+
+        public Subject(string name, string shortening, PassMode passmode, Teacher supervisedBy) {
+            SubjectName = name;
+            SubjectShortening = shortening;
+            SupervisedBy = supervisedBy;
+            PassMode = passmode;
+        }
 
         public Double GetPassRate() 
         { //Returns passrate as a percentage

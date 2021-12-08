@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    public class Event_BYT 
+    public class TimedEvent 
     {
 
         private int _eventId;
@@ -80,7 +80,7 @@ namespace BYT_9_10.Models
         public bool IsCancelled { get; set; }
         public List<Student> Attendees { get; set; }
 
-        public Event_BYT(int eventId, string name, DateTime start, DateTime end, bool isCancelled) {
+        public TimedEvent(int eventId, string name, DateTime start, DateTime end, bool isCancelled) {
             EventId = eventId;
             Name = name;
             StartDateTime = start;

@@ -28,7 +28,7 @@ namespace BYT_9_10.Models
 
         private List<Class> Classes;
 
-        private List<Event_BYT> Events;
+        private List<TimedEvent> Events;
 
 
 
@@ -51,7 +51,7 @@ namespace BYT_9_10.Models
             return Classes;
         }
 
-        public List<Event_BYT> GetListOfEvents() 
+        public List<TimedEvent> GetListOfEvents() 
         {
             return Events;
         }

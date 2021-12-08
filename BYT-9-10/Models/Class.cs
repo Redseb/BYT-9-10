@@ -7,28 +7,58 @@ using System.Threading.Tasks;
 
 namespace BYT_9_10.Models 
 {
-    public class Class : Event_BYT 
+    public class Class : TimedEvent 
     {
         private string _roomNumber;
-        private bool _isLecture;
         private string _group;
         private Teacher _teacher;
         private Subject _subject;
 
         [Required]
         [StringLength(4, MinimumLength =4)] //ie. A122
-        public string RoomNumber { get; set; }
+        public string RoomNumber {
+            get {
+                return _roomNumber;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length != 4 || !char.IsLetter(value.First())) {
+                    throw new ValidationException();
+                }
+                _roomNumber = value;
+            }
+        }
 
         [Required]
         public bool IsLecture { get; set; }
 
         [Required]
         [StringLength(3, MinimumLength =3)] //ie. 14c
-        public string Group { get; set; }
+        public string Group {
+            get {
+                return _roomNumber;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length != 3 || !char.IsLetter(value.Last())) {
+                    throw new ValidationException();
+                }
+                _roomNumber = value;
+            }
+        }
 
         private List<Student> students;
 
         public Class(int eventId, string name, DateTime start, DateTime end, bool isCancelled, string roomNumber, bool isLecture, string group, Teacher teacher, Subject subject) : base(eventId, name, start, end, isCancelled) {
+            RoomNumber = roomNumber;
+            IsLecture = isLecture;
+            Group = group;
+            Teacher = teacher;
+            Subject = subject;
         }
 
         public Teacher Teacher { get; set; }

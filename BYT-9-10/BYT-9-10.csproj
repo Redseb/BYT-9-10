@@ -52,7 +52,7 @@
     <Compile Include="Models\CafeteriaOrder.cs" />
     <Compile Include="Models\CafeteriaProduct.cs" />
     <Compile Include="Models\Class.cs" />
-    <Compile Include="Models\Event_BYT.cs" />
+    <Compile Include="Models\TimedEvent.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentSubject.cs" />
