@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BYT_9_10.Models {
     public class StudentSubject 
     {
-
+        private DateTime _dateUpdated;
         public struct GradesAvailable 
         {
             public const double Insufficient = 2.0;
@@ -26,11 +26,28 @@ namespace BYT_9_10.Models {
         public Subject Subject { get; set; }
 
         [Required]
-        public GradesAvailable Grade { get; set; }
+        public Double Grade { get; set; }
 
-        public DateTime DateUpdated { get; set; }
+        public DateTime DateUpdated {
+            get {
+                return _dateUpdated;
+            }
+            set {
+                if (value > DateTime.Now) { //Don't accept future updated dates
+                    throw new ValidationException();
+                }
+                _dateUpdated = value;
+            }
+        }
 
-        public void setGrade(GradesAvailable newGrade) 
+        public StudentSubject(Student student, Subject subject, Double grade, DateTime dateUpdated) { 
+            Student = student;
+            Subject = subject;
+            Grade = grade;
+            DateUpdated = dateUpdated;
+        }
+
+        public void setGrade(Double newGrade) 
         {
             this.Grade = newGrade;
         }
