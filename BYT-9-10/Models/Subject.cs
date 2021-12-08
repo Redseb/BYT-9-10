@@ -20,10 +20,36 @@ namespace BYT_9_10.Models
         private Teacher _supervisedBy;
         [Required]
         [StringLength(50, MinimumLength =5)]
-        public string SubjectName { get; set; }
+        public string SubjectName {
+            get {
+                return _subjectName;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length <5 || value.Length >50) {
+                    throw new ValidationException();
+                }
+                _subjectName = value;
+            }
+        }
         [Required]
         [StringLength(3, MinimumLength = 3)]
-        public string SubjectShortening { get; set; }
+        public string SubjectShortening {
+            get {
+                return _subjectShortening;
+            }
+            set {
+                if (string.IsNullOrEmpty(value)) {
+                    throw new ArgumentNullException();
+                }
+                if (value.Length != 3) {
+                    throw new ValidationException();
+                }
+                _subjectShortening = value;
+            }
+        }
         [Required]
         public PassMode PassMode { get; set; }
         [Required]
