@@ -10,19 +10,64 @@ namespace BYT_9_10.Models
     public class Application 
     {
 
-        [Required]
-        public string ApplicationId { get; set; }
+        private int _applicationId;
+        private DateTime _sendDate;
+        private string _applicationBody;
+        private string _replyMessage;
 
         [Required]
-        public DateTime SendDate { get; set; }
+        public int ApplicationId {
+            get {
+                return _applicationId;
+            }
+            set {
+                if (value < 0) {
+                    throw new ValidationException();
+                }
+                _applicationId = value;
+            }
+        }
+
+        [Required]
+        public DateTime SendDate {
+            get {
+                return _sendDate;
+            }
+            set {
+                if (value > DateTime.Now) { //Don't accept future send dates
+                    throw new ValidationException();
+                }
+                _sendDate = value;
+            }
+        }
 
         [Required]
         [StringLength(300)]
-        public string ApplicationBody { get; set; }
+        public string ApplicationBody {
+            get {
+                return _applicationBody;
+            }
+            set {
+                if (value.Length > 300) {
+                    throw new ValidationException();
+                }
+                _applicationBody = value;
+            }
+        }
 
         [Required]
         [StringLength(300)]
-        public string ReplyMessage { get; set; }
+        public string ReplyMessage {
+            get {
+                return _replyMessage;
+            }
+            set {
+                if (value.Length > 300) {
+                    throw new ValidationException();
+                }
+                _replyMessage = value;
+            }
+        }
         [Required]
         public bool IsCancelled { get; set; }
         [Required]
@@ -30,6 +75,24 @@ namespace BYT_9_10.Models
         [Required]
         public Teacher Replier { get; set; } //Required but can be empty
 
+        public Application(int applicationId, DateTime sendDate, string applicationBody, string replyMessage, bool isCancelled, Account sender, Teacher replier) { 
+            this.ApplicationId = applicationId;
+            this.ApplicationBody = applicationBody;
+            this.SendDate = sendDate;
+            this.ReplyMessage = replyMessage;
+            this.IsCancelled = isCancelled;
+            this.Sender = sender;
+            this.Replier = replier;
+        }
+
+        public Application(int applicationId, DateTime sendDate, string applicationBody, string replyMessage, bool isCancelled, Account sender) {
+            this.ApplicationId = applicationId;
+            this.ApplicationBody = applicationBody;
+            this.SendDate = sendDate;
+            this.ReplyMessage = replyMessage;
+            this.IsCancelled = isCancelled;
+            this.Sender = sender;
+        }
 
         public void CancelApplication() 
         {

@@ -9,12 +9,12 @@ namespace BYT_9_10.Models
 {
     public class Student : Account 
     {
-        
+        private string _studentNumber;
         [Required]
         [StringLength(6, MinimumLength = 6)]
         private string StudentNumber { 
             get {
-                return StudentNumber;
+                return _studentNumber;
             }
             set {
                 if (string.IsNullOrEmpty(value)) {
@@ -23,6 +23,7 @@ namespace BYT_9_10.Models
                 if (value.Length != 6 || value.First() != 's') {
                     throw new ValidationException();
                 }
+                _studentNumber = value;
             } }
 
         private List<Class> Classes;

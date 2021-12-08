@@ -9,11 +9,21 @@ namespace BYT_9_10.Models
 {
     public class Teacher : Account 
     {
-
+        private string _emailPrefix;
 
         [Required]
         [StringLength(10, MinimumLength = 3)]
-        public string EmailPrefix { get; set; }
+        public string EmailPrefix {
+            get {
+                return _emailPrefix;
+            }
+            set {
+                if (value.Length > 10 || value.Length < 3) {
+                    throw new ValidationException();
+                }
+                _emailPrefix = value;
+            }
+        }
         
         private List<Class> Classes { get; set; }
         public List<Application> RepliedApplications { get; set; }
